@@ -1,0 +1,141 @@
+
+(rules PCB humidifier RB V1
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 132)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 1000.0)
+    (clear 500.2)
+    (clear 500.0 (type smd_to_turn_gap))
+    (clear 700.2 (type default_GND))
+    (clear 1000.2 (type default_ac))
+    (clear 125.0 (type smd_smd))
+    (clear 700.2 (type smd_GND))
+    (clear 1000.2 (type smd_ac))
+    (clear 700.2 (type "kicad_default"_GND))
+    (clear 1000.2 (type "kicad_default"_ac))
+    (clear 700.2 (type GND_GND))
+    (clear 1000.2 (type GND_ac))
+    (clear 1000.2 (type ac_ac))
+  )
+  (padstack "Via[0-1]_2000:700_um"
+    (shape
+      (circle F.Cu 2000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 2000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_1000:300_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_2000:700_um" "Via[0-1]_2000:700_um" default
+  )
+  (via 
+    "Via[0-1]_1000:300_um" "Via[0-1]_1000:300_um" default
+  )
+  (via 
+    "Via[0-1]_2000:700_um-kicad_default" "Via[0-1]_2000:700_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_1000:300_um-kicad_default" "Via[0-1]_1000:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_2000:700_um-GND" "Via[0-1]_2000:700_um" GND
+  )
+  (via 
+    "Via[0-1]_1000:300_um-GND" "Via[0-1]_1000:300_um" GND
+  )
+  (via 
+    "Via[0-1]_2000:700_um-ac" "Via[0-1]_2000:700_um" ac
+  )
+  (via 
+    "Via[0-1]_1000:300_um-ac" "Via[0-1]_1000:300_um" ac
+  )
+  (via_rule
+    default "Via[0-1]_1000:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_2000:700_um-kicad_default"
+  )
+  (via_rule
+    GND "Via[0-1]_2000:700_um-GND"
+  )
+  (via_rule
+    ac "Via[0-1]_1000:300_um-ac"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    E4 E5 E6 E7 E8 E9 12V
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class GND
+    (clearance_class GND)
+    (via_rule GND)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class ac
+    LIVE LIVE. "Net-(U1-Pad6)" "Net-(U1-Pad5)" "Net-(U2-Pad5)" "Net-(U2-Pad6)" "Net-(U3-Pad6)" "Net-(U3-Pad5)"
+    "Net-(U4-Pad5)" "Net-(U4-Pad6)" "Net-(U5-Pad6)" "Net-(U5-Pad5)" "Net-(U6-Pad5)" "Net-(U6-Pad6)" NEUTRAL "LIVE_out2"
+    "LIVE_out5" "LIVE_out1" "LIVE_out4" "LIVE_out6" "LIVE_out3"
+    (clearance_class ac)
+    (via_rule ac)
+    (rule
+      (width 3000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

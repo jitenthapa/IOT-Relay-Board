@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name humidifier-RB-V1.1-rescue)(type Legacy)(uri "${KIPRJMOD}/humidifier RB V1.1-rescue.lib")(options "")(descr ""))
+)

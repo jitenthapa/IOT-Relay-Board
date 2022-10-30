@@ -1,0 +1,417 @@
+EESchema Schematic File Version 4
+LIBS:Relay-board-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "2 Channel Relay Board"
+Date ""
+Rev "1.0.0"
+Comp "Fewalab"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5D07A603
+P 6004 2094
+F 0 "J1" H 6084 2086 50  0000 L CNN
+F 1 "RELAY-1" H 6084 1995 50  0000 L CNN
+F 2 "dual terminal:dual terminal-small-4" H 6004 2094 50  0001 C CNN
+F 3 "~" H 6004 2094 50  0001 C CNN
+	1    6004 2094
+	1    0    0    -1  
+$EndComp
+Text GLabel 4606 2030 0    50   Input ~ 0
+COM1
+$Comp
+L HAT901CSDC12:HAT901CSDC12 RELAY1
+U 1 1 60649F0D
+P 4706 1930
+F 0 "RELAY1" H 4931 2095 50  0000 C CNN
+F 1 "HAT901CSDC12" H 4931 2004 50  0000 C CNN
+F 2 "HAT901CSDC12:HAT901CSDC12-large-holes" H 4706 1930 50  0001 C CNN
+F 3 "" H 4706 1930 50  0001 C CNN
+	1    4706 1930
+	1    0    0    -1  
+$EndComp
+Text GLabel 5256 2280 2    50   Input ~ 0
+NO1
+Text GLabel 5804 2094 0    50   Input ~ 0
+COM1
+Text GLabel 5804 2194 0    50   Input ~ 0
+NO1
+$Comp
+L Isolator:PC817 U1
+U 1 1 600E3751
+P 2606 2604
+F 0 "U1" H 2606 2929 50  0000 C CNN
+F 1 "PC817" H 2606 2838 50  0000 C CNN
+F 2 "PC81713NIP0X-5:SOT254P1025X400-4N" H 2406 2404 50  0001 L CIN
+F 3 "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf" H 2606 2604 50  0001 L CNN
+	1    2606 2604
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 600E381F
+P 2216 2199
+F 0 "R1" H 2286 2245 50  0000 L CNN
+F 1 "1K" H 2286 2154 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2146 2199 50  0001 C CNN
+F 3 "~" H 2216 2199 50  0001 C CNN
+	1    2216 2199
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2306 2504 2216 2504
+Wire Wire Line
+	2216 2504 2216 2349
+Text GLabel 2216 2049 1    50   Input ~ 0
+IN1
+Text GLabel 2306 2704 3    50   Input ~ 0
+GND
+Text GLabel 3321 1844 1    50   Input ~ 0
+VPOWER
+$Comp
+L Device:R R3
+U 1 1 600EB399
+P 3161 2704
+F 0 "R3" V 2954 2704 50  0000 C CNN
+F 1 "1K" V 3045 2704 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3091 2704 50  0001 C CNN
+F 3 "~" H 3161 2704 50  0001 C CNN
+	1    3161 2704
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2906 2704 3011 2704
+Wire Wire Line
+	3311 2704 3431 2704
+Text GLabel 3731 2904 3    50   Input ~ 0
+GND
+$Comp
+L Device:D_Small D1
+U 1 1 600F2BF9
+P 3731 2139
+F 0 "D1" V 3685 2207 50  0000 L CNN
+F 1 "Diode" H 3641 2044 50  0000 L CNN
+F 2 "Buck_3A:SMA-DO214AC" V 3731 2139 50  0001 C CNN
+F 3 "~" V 3731 2139 50  0001 C CNN
+	1    3731 2139
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3731 2284 4076 2284
+Wire Wire Line
+	2906 1984 3036 1984
+Wire Wire Line
+	2906 1984 2906 2504
+Wire Wire Line
+	3321 1844 3321 1984
+Connection ~ 3321 1984
+Wire Wire Line
+	3321 1984 3731 1984
+Wire Wire Line
+	3731 2504 3731 2284
+Wire Wire Line
+	3731 2239 3731 2284
+Connection ~ 3731 2284
+Wire Wire Line
+	3731 2039 3731 1984
+Connection ~ 3731 1984
+Wire Wire Line
+	3731 1984 4076 1984
+Wire Notes Line
+	2011 3324 2011 1434
+$Comp
+L Device:LED_Small DL1
+U 1 1 606133A7
+P 3036 2154
+F 0 "DL1" V 3082 2086 50  0000 R CNN
+F 1 "LED" V 2991 2086 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" V 3036 2154 50  0001 C CNN
+F 3 "~" V 3036 2154 50  0001 C CNN
+	1    3036 2154
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R2
+U 1 1 6061369E
+P 3386 2284
+F 0 "R2" V 3190 2284 50  0000 C CNN
+F 1 "1K" V 3386 2284 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3386 2284 50  0001 C CNN
+F 3 "~" H 3386 2284 50  0001 C CNN
+	1    3386 2284
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3731 2284 3486 2284
+Wire Wire Line
+	3286 2284 3036 2284
+Wire Wire Line
+	3036 2254 3036 2284
+Wire Wire Line
+	3036 2054 3036 1984
+Connection ~ 3036 1984
+Wire Wire Line
+	3036 1984 3321 1984
+Wire Wire Line
+	4606 2130 4076 2130
+Wire Wire Line
+	4076 2130 4076 1984
+Wire Wire Line
+	4076 2284 4076 2230
+Wire Wire Line
+	4076 2230 4606 2230
+Wire Notes Line
+	6652 1434 6652 3324
+Wire Notes Line
+	2011 3324 6652 3324
+Wire Notes Line
+	2011 1434 6652 1434
+$Comp
+L Connector:Screw_Terminal_01x02 J4
+U 1 1 60668C1D
+P 5988 4294
+F 0 "J4" H 6068 4286 50  0000 L CNN
+F 1 "RELAY-1" H 6068 4195 50  0000 L CNN
+F 2 "dual terminal:dual terminal-small-4" H 5988 4294 50  0001 C CNN
+F 3 "~" H 5988 4294 50  0001 C CNN
+	1    5988 4294
+	1    0    0    -1  
+$EndComp
+Text GLabel 4590 4230 0    50   Input ~ 0
+COM2
+$Comp
+L HAT901CSDC12:HAT901CSDC12 RELAY2
+U 1 1 60668C24
+P 4690 4130
+F 0 "RELAY2" H 4915 4295 50  0000 C CNN
+F 1 "HAT901CSDC12" H 4915 4204 50  0000 C CNN
+F 2 "HAT901CSDC12:HAT901CSDC12-large-holes" H 4690 4130 50  0001 C CNN
+F 3 "" H 4690 4130 50  0001 C CNN
+	1    4690 4130
+	1    0    0    -1  
+$EndComp
+Text GLabel 5240 4480 2    50   Input ~ 0
+NO2
+Text GLabel 5788 4294 0    50   Input ~ 0
+COM2
+Text GLabel 5788 4394 0    50   Input ~ 0
+NO2
+$Comp
+L Isolator:PC817 U2
+U 1 1 60668C2D
+P 2590 4804
+F 0 "U2" H 2590 5129 50  0000 C CNN
+F 1 "PC817" H 2590 5038 50  0000 C CNN
+F 2 "PC81713NIP0X-5:SOT254P1025X400-4N" H 2390 4604 50  0001 L CIN
+F 3 "http://www.soselectronic.cz/a_info/resource/d/pc817.pdf" H 2590 4804 50  0001 L CNN
+	1    2590 4804
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 60668C33
+P 2200 4399
+F 0 "R4" H 2270 4445 50  0000 L CNN
+F 1 "1K" H 2270 4354 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 2130 4399 50  0001 C CNN
+F 3 "~" H 2200 4399 50  0001 C CNN
+	1    2200 4399
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2290 4704 2200 4704
+Wire Wire Line
+	2200 4704 2200 4549
+Text GLabel 2200 4249 1    50   Input ~ 0
+IN2
+Text GLabel 2290 4904 3    50   Input ~ 0
+GND
+Text GLabel 3305 4044 1    50   Input ~ 0
+VPOWER
+$Comp
+L Device:R R6
+U 1 1 60668C44
+P 3145 4904
+F 0 "R6" V 2938 4904 50  0000 C CNN
+F 1 "1K" V 3029 4904 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" V 3075 4904 50  0001 C CNN
+F 3 "~" H 3145 4904 50  0001 C CNN
+	1    3145 4904
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2890 4904 2995 4904
+Wire Wire Line
+	3295 4904 3415 4904
+Text GLabel 3715 5104 3    50   Input ~ 0
+GND
+$Comp
+L Device:D_Small D2
+U 1 1 60668C4D
+P 3715 4339
+F 0 "D2" V 3669 4407 50  0000 L CNN
+F 1 "Diode" H 3625 4244 50  0000 L CNN
+F 2 "Buck_3A:SMA-DO214AC" V 3715 4339 50  0001 C CNN
+F 3 "~" V 3715 4339 50  0001 C CNN
+	1    3715 4339
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3715 4484 4060 4484
+Wire Wire Line
+	2890 4184 3020 4184
+Wire Wire Line
+	2890 4184 2890 4704
+Wire Wire Line
+	3305 4044 3305 4184
+Connection ~ 3305 4184
+Wire Wire Line
+	3305 4184 3715 4184
+Wire Wire Line
+	3715 4704 3715 4484
+Wire Wire Line
+	3715 4439 3715 4484
+Connection ~ 3715 4484
+Wire Wire Line
+	3715 4239 3715 4184
+Connection ~ 3715 4184
+Wire Wire Line
+	3715 4184 4060 4184
+Wire Notes Line
+	1995 5524 1995 3634
+$Comp
+L Device:LED_Small DL2
+U 1 1 60668C60
+P 3020 4354
+F 0 "DL2" V 3066 4286 50  0000 R CNN
+F 1 "LED" V 2975 4286 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" V 3020 4354 50  0001 C CNN
+F 3 "~" V 3020 4354 50  0001 C CNN
+	1    3020 4354
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R5
+U 1 1 60668C66
+P 3370 4484
+F 0 "R5" V 3174 4484 50  0000 C CNN
+F 1 "1K" V 3370 4484 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3370 4484 50  0001 C CNN
+F 3 "~" H 3370 4484 50  0001 C CNN
+	1    3370 4484
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3715 4484 3470 4484
+Wire Wire Line
+	3270 4484 3020 4484
+Wire Wire Line
+	3020 4454 3020 4484
+Wire Wire Line
+	3020 4254 3020 4184
+Connection ~ 3020 4184
+Wire Wire Line
+	3020 4184 3305 4184
+Wire Wire Line
+	4590 4330 4060 4330
+Wire Wire Line
+	4060 4330 4060 4184
+Wire Wire Line
+	4060 4484 4060 4430
+Wire Wire Line
+	4060 4430 4590 4430
+Wire Notes Line
+	6636 3634 6636 5524
+Wire Notes Line
+	1995 5524 6636 5524
+Wire Notes Line
+	1995 3634 6636 3634
+$Comp
+L Connector:Screw_Terminal_01x02 J2
+U 1 1 6066A3D4
+P 9712 2538
+F 0 "J2" H 9791 2530 50  0000 L CNN
+F 1 "VPOWER" H 9791 2439 50  0000 L CNN
+F 2 "dual terminal:dual terminal-small-4" H 9712 2538 50  0001 C CNN
+F 3 "~" H 9712 2538 50  0001 C CNN
+	1    9712 2538
+	1    0    0    -1  
+$EndComp
+Text GLabel 9512 2538 0    50   Input ~ 0
+VPOWER
+Text GLabel 9512 2638 0    50   Input ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x03 J3
+U 1 1 6066A970
+P 9692 2964
+F 0 "J3" H 9771 3006 50  0000 L CNN
+F 1 "INPUT-PINS" H 9771 2915 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9692 2964 50  0001 C CNN
+F 3 "~" H 9692 2964 50  0001 C CNN
+	1    9692 2964
+	1    0    0    -1  
+$EndComp
+Text GLabel 9492 2864 0    50   Input ~ 0
+IN1
+Text GLabel 9492 2964 0    50   Input ~ 0
+IN2
+Text GLabel 9492 3064 0    50   Input ~ 0
+GND
+Text Notes 7060 6950 0    118  ~ 0
+2 CH RELAY BOARD
+Text Notes 1200 -190 0    118  ~ 0
+Connector: \n300V/20A 7.62 mm KF7.62 - 2P 3P 4P Screw Terminal Block\nhttps://www.aliexpress.com/item/1005003493308832.html?spm=a2g0o.order_list.0.0.37a01802WQQmYV
+$Comp
+L Transistor_BJT:BD139 Q3
+U 1 1 63547EB6
+P 3631 2704
+F 0 "Q3" H 3823 2750 50  0000 L CNN
+F 1 "BD139" H 3823 2659 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-251-3_Vertical" H 3831 2629 50  0001 L CIN
+F 3 "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00001225.pdf" H 3631 2704 50  0001 L CNN
+	1    3631 2704
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:BD139 Q1
+U 1 1 635484AC
+P 3615 4904
+F 0 "Q1" H 3807 4950 50  0000 L CNN
+F 1 "BD139" H 3807 4859 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-251-3_Vertical" H 3815 4829 50  0001 L CIN
+F 3 "http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00001225.pdf" H 3615 4904 50  0001 L CNN
+	1    3615 4904
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x08 J6
+U 1 1 63560235
+P 7589 2236
+F 0 "J6" H 7669 2228 50  0000 L CNN
+F 1 "Conn_01x08" H 7669 2137 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 7589 2236 50  0001 C CNN
+F 3 "~" H 7589 2236 50  0001 C CNN
+	1    7589 2236
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x08 J5
+U 1 1 63560306
+P 8513 2198
+F 0 "J5" H 8593 2190 50  0000 L CNN
+F 1 "Conn_01x08" H 8593 2099 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical" H 8513 2198 50  0001 C CNN
+F 3 "~" H 8513 2198 50  0001 C CNN
+	1    8513 2198
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
